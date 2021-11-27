@@ -1,0 +1,15 @@
+*.tar
+*.dll
+*.idb
+*.pdb
+*.*obj
+*.recipe
+*.txt
+*.*log
+*.*db*
+*.json
+*.ifc
+*.ilk
+*.ipch
+*.suo
+*.command
