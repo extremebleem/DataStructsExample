@@ -10,7 +10,7 @@ template <typename T = int>
 struct Cell
 {
 	T value_;
-	Cell<T>* next_;
+	std::shared_ptr<Cell<T>> next_;
 
 	Cell()
 		: value_(nullptr), next_(nullptr)
@@ -64,21 +64,23 @@ public:
 			index = lenght_ - 1;
 		}
 
-		for (int i = 0; i <= index; ++i, cell = cell->next_)
+		for (int i = 0; i <= index; ++i)
 		{
 			if (!cell->next_)
 			{
-				cell->next_ = new Cell<T>(value);
+				cell->next_ = std::make_shared<Cell<T>>(value);
 				++lenght_;
 				break;
 			}
 			else if (i == index)
 			{
-				cell->next_ = new Cell<T>(*cell);
+				cell->next_ = std::make_shared<Cell<T>>(*cell);
 				cell->value_ = value;
 				++lenght_;
 				break;
 			}
+
+			cell = cell->next_.get();
 		}
 	}
 
@@ -98,7 +100,7 @@ public:
 				return cell->value_;
 			}
 
-			cell = cell->next_;
+			cell = cell->next_.get();
 		}
 
 		return T();

@@ -154,6 +154,7 @@
   <ItemGroup>
     <ClInclude Include="binary_tree.h" />
     <ClInclude Include="linked_list.h" />
+    <ClInclude Include="tree.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\readme.md" />

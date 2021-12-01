@@ -18,6 +18,9 @@
     <ClInclude Include="linked_list.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="tree.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\readme.md">
